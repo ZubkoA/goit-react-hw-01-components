@@ -10,5 +10,5 @@ export const Label = styled.span`
 `;
 
 export const Percentage = styled.span`
-  color: #000;
+  color: ${props => props.theme.colors.mainColor};
 `;
