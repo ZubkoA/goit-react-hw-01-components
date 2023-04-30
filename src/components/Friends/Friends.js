@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Avatar, Name, Status, Container, AvatarWrap } from './riends.styled';
+import { Avatar, Name, Status, AvatarWrap } from './riends.styled';
 
 const Friends = ({ avatarUrl, status, name }) => {
   return (
