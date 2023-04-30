@@ -20,5 +20,18 @@ export const Head = styled.tr`
   & > td {
     text-align: center;
     border: 1px solid black;
+    font-size: ${props => props.theme.fontSize(5)};
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: ${props => props.theme.colors.secondColor};
+  }
+
+  & > th {
+    font-size: ${props => props.theme.fontSize(6)};
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: ${props => props.theme.colors.mainColor};
   }
 `;
