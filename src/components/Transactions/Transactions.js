@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 // import { Head } from './Transactions.styled';
 
-const Transactions = ({ type, amount, currency, index }) => {
+const Transactions = ({ type, amount, currency }) => {
   return (
     <>
       <td>{type}</td>
