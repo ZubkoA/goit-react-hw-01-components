@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-const setBgColor = ({ children }) => {
-  return children ? 'green' : 'tomato';
+const setBgColor = ({ children, theme }) => {
+  return children ? theme.bgc.accentGreen : theme.bgc.accentRed;
 };
 
 export const Container = styled.div`

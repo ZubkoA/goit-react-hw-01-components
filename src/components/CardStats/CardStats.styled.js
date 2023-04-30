@@ -1,29 +1,28 @@
 import styled from '@emotion/styled';
 
 export const Title = styled.h2`
-  font-size: 24px;
+  font-size: ${props => props.theme.fontSize(12)};
   font-weight: 700;
   line-height: 40px;
   letter-spacing: 0.5px;
-  margin-top: 32px;
-  margin-bottom: 6px;
+  margin-top: ${props => props.theme.spacing(7)};
+  margin-bottom: ${props => props.theme.spacing(7)};
   text-align: center;
 `;
 
 export const StatList = styled.ul`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
+  grid-gap: ${props => props.theme.spacing(3)};
 `;
 
 export const Item = styled.li`
   list-style: none;
-  background-color: #eee;
-  color: #666;
+  background-color: ${props => props.theme.bgc.mainBgc};
+  color: ${props => props.theme.colors.secondColor};
   font-weight: 700;
-  font-size: 4vw;
-  padding: 10px;
+  font-size: ${props => props.theme.fontSize(10)};
+  padding: ${props => props.theme.spacing(2)};
   box-shadow: 0 0 2px 0 #000;
   text-align: center;
-  padding-top: 13%;
 `;
