@@ -22,7 +22,7 @@ export const Head = styled.tr`
     border: 1px solid black;
     font-size: ${props => props.theme.fontSize(5)};
     font-weight: 600;
-    line-height: 24px;
+    line-height: ${props => props.theme.spacing(6)};
     letter-spacing: 0.5px;
     color: ${props => props.theme.colors.secondColor};
   }
