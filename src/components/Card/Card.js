@@ -21,6 +21,8 @@ function Card({ users }) {
   );
 }
 
-Card.propTypes = {};
+Card.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape()),
+};
 
 export default Card;

@@ -12,7 +12,7 @@ export const Title = styled.h2`
 
 export const StatList = styled.ul`
   display: grid;
-  grid: auto-flow 15vh / repeat(5, 17vw);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
 `;
 

@@ -14,7 +14,6 @@ function CardFriends({ friends }) {
           />
         </Item>
       ))}
-      console.log(friends)
     </Container>
   );
 }
