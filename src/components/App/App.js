@@ -1,19 +1,17 @@
 import { Container } from './App.styled';
-import Card from 'components/Card/Card';
-import CardStats from 'components/CardStats/CardStats';
-import CardFriends from 'components/CardFriends/CardFriends';
-import CardTransactions from 'components/CardTransactions/CardTransactions';
-import { data, user, friends, transactions } from 'components/data';
-
-// import user from 'path/to/user.json';
+import Profile from 'components/Profile/Profile';
+import Statistics from 'components/Statistics/Statistics';
+import Friends from 'components/Friends/Friends';
+import Transactions from 'components/Transactions/Transactions';
+import { user, data, friends, transactions } from 'components/data';
 
 export default function App() {
   return (
     <Container>
-      <Card users={user} />
-      <CardStats title="Upload stats" stats={data} />
-      <CardFriends friends={friends} />
-      <CardTransactions trans={transactions} />
+      <Profile users={user} />
+      <Statistics title="Upload stats" stats={data} />
+      <Friends friends={friends} />
+      <Transactions trans={transactions} />
     </Container>
   );
 }

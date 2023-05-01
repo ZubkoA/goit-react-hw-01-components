@@ -1,4 +1,8 @@
 import styled from '@emotion/styled';
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export const Card = styled.div`
   width: 380px;
