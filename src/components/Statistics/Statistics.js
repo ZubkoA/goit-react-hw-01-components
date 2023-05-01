@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
-import { Percentage, Container, Label } from './Statistics.styled';
+import {
+  Percentage,
+  Container,
+  Label,
+  Item,
+  StatList,
+  Title,
+} from './Statistics.styled';
 
-const Statistics = ({ label, percentage }) => {
+const StatisticsWrap = ({ label, percentage }) => {
   return (
     <Container>
       <Label>{label}</Label>
@@ -10,9 +17,29 @@ const Statistics = ({ label, percentage }) => {
   );
 };
 
+function Statistics({ title, stats }) {
+  return (
+    <>
+      {title && <Title>{title}</Title>}
+      <StatList>
+        {stats.map(({ id, label, percentage }) => (
+          <Item key={id}>
+            <StatisticsWrap label={label} percentage={percentage} />
+          </Item>
+        ))}
+      </StatList>
+    </>
+  );
+}
+
 Statistics.propTypes = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 export default Statistics;

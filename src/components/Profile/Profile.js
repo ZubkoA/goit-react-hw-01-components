@@ -9,17 +9,10 @@ import {
   States,
   Quantity,
   Label,
+  Container,
 } from './Profile.styled';
 
-const Profile = ({
-  username,
-  tag,
-  location,
-  avatar,
-  followers,
-  views,
-  likes,
-}) => {
+const Wrap = ({ username, tag, location, avatar, stats }) => {
   return (
     <Card>
       <Description>
@@ -31,30 +24,48 @@ const Profile = ({
 
       <States>
         <li>
-          <Label>{followers}</Label>
-          <Quantity>1000</Quantity>
+          <Label>Followers</Label>
+          <Quantity>{stats.followers}</Quantity>
         </li>
         <li>
-          <Label>{views}</Label>
-          <Quantity>2000</Quantity>
+          <Label>Views</Label>
+          <Quantity>{stats.views}</Quantity>
         </li>
         <li>
-          <Label>{likes}</Label>
-          <Quantity>3000</Quantity>
+          <Label>Likes</Label>
+          <Quantity>{stats.likes}</Quantity>
         </li>
       </States>
     </Card>
   );
 };
 
+function Profile({ users }) {
+  return (
+    <Container>
+      {users.map(({ username, tag, location, avatar, stats }) => (
+        <Wrap
+          username={username}
+          tag={tag}
+          location={location}
+          avatar={avatar}
+          stats={stats}
+        />
+      ))}
+    </Container>
+  );
+}
+
 Profile.propTypes = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  followers: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string.isRequired,
+      tag: PropTypes.string.isRequired,
+      location: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      stats: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 export default Profile;
